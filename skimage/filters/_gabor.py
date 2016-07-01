@@ -142,11 +142,11 @@ def morlet_kernel(frequency, theta=0, bandwidth=1,
        --------
        >>> from skimage.filters import morlet_kernel
        >>> from skimage import io
-       >>> from matplotlib import pyplot as plt  # doctest: +SKIP
+       >>> from matplotlib import pyplot as plt
        >>> import numpy as np
        >>> gk = morlet_kernel(frequency=0.2)
-       >>> plt.figure()        # doctest: +SKIP
-       >>> io.imshow(gk.real)  # doctest: +SKIP
+       >>> plt.figure()
+       >>> io.imshow(gk.real)  
        >>> io.show()           # doctest: +SKIP
 
        >>> # change in angle to pi/4
