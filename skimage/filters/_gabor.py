@@ -97,64 +97,7 @@ def gabor_kernel(frequency, theta=0, bandwidth=1, sigma_x=None, sigma_y=None,
 
 def morlet_kernel(frequency, theta=0, bandwidth=1,
                       sigma_x=None, sigma_y=None, n_stds=3, offset=0):
-    """Return complex 2D morlet filter kernel.
-
-       Morlet kernel is a Gabor kernel with no DC offset. This means that not only
-       the imaginary part (sin component), but also the real part (cos component)
-       have zero sum. The filter response to a constant image is zero.
-       Harmonic function consists of a complex exponential (carrier) multiplied
-       by a Gaussian window (envelope). Spatial frequency is inversely proportional
-       to the wavelength of the harmonic and to the standard deviation of a Gaussian
-       kernel. The bandwidth is also inversely proportional to the standard
-       deviation.
-
-       Parameters
-       ----------
-       frequency : float
-           Spatial frequency of the harmonic function. Specified in pixels.
-       theta : float, optional
-           Orientation in radians. If 0, the harmonic is in the x-direction.
-       bandwidth : float, optional
-           The bandwidth captured by the filter. For fixed bandwidth, `sigma_x`
-           and `sigma_y` will decrease with increasing frequency. This value is
-           ignored if `sigma_x` and `sigma_y` are set by the user.
-       sigma_x, sigma_y : float, optional
-           Standard deviation in x- and y-directions. These directions apply to
-           the kernel *before* rotation. If `theta = pi/2`, then the kernel is
-           rotated 90 degrees so that `sigma_x` controls the *vertical* direction.
-       n_stds : scalar, optional
-           The linear size of the kernel is n_stds (3 by default) standard
-           deviations
-       offset : float, optional
-           Phase offset of harmonic function in radians.
-
-       Returns
-       -------
-       g : complex array
-           Complex filter kernel.
-
-       References
-       ----------
-       .. [1] https://en.wikipedia.org/wiki/Morlet_wavelet
-
-
-       Examples
-       --------
-       >>> from skimage.filters import morlet_kernel
-       >>> from skimage import io
-       >>> from matplotlib import pyplot as plt
-       >>> import numpy as np
-       >>> gk = morlet_kernel(frequency=0.2)
-       >>> plt.figure()
-       >>> io.imshow(gk.real)  
-       >>> io.show()           # doctest: +SKIP
-
-       >>> # change in angle to pi/4
-       >>> gk = morlet_kernel(frequency=0.2, theta=np.pi/4.)
-       >>> plt.figure()        # doctest: +SKIP
-       >>> io.imshow(gk.real)  # doctest: +SKIP
-       >>> io.show()           # doctest: +SKIP
-       """
+    """3"""
 
     w = gabor_kernel(frequency, theta=theta, bandwidth=bandwidth,
                      sigma_x=sigma_x, sigma_y=sigma_y,
@@ -223,7 +166,7 @@ def gabor(image, frequency, theta=0, bandwidth=1, sigma_x=None,
     --------
     >>> from skimage.filters import gabor
     >>> from skimage import data, io
-    >>> from matplotlib import pyplot as plt  # doctest: +SKIP
+    >>> from matplotlib import pyplot as plt  
 
     >>> image = data.coins()
     >>> # detecting edges in a coin image
